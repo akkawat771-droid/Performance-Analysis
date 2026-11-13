@@ -725,7 +725,7 @@
 <script>
   (function () {
     try {
-      if (localStorage.getItem('ss_unlocked_v1') === '1') {
+      if (localStorage.getItem('ss_unlocked_v2') === '1') {
         document.documentElement.classList.add('unlocked');
       }
     } catch (e) {}
@@ -3631,7 +3631,7 @@
       for (let i = 0; i < s.length; i++) { h = (h * 31 + s.charCodeAt(i)) >>> 0; }
       return h;
     }
-    var PW_HASH = 2572714016; // hash of the configured password
+    var PW_HASH = 3518399520; // hash of the configured password
     var form = document.getElementById('lockForm');
     var input = document.getElementById('lockInput');
     var err = document.getElementById('lockError');
@@ -3639,7 +3639,7 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (pwHash(input.value) === PW_HASH) {
-        try { localStorage.setItem('ss_unlocked_v1', '1'); } catch (e) {}
+        try { localStorage.setItem('ss_unlocked_v2', '1'); } catch (e) {}
         document.documentElement.classList.add('unlocked');
         err.hidden = true;
         input.value = '';
